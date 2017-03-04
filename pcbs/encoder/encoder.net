@@ -1,8 +1,8 @@
 (export (version D)
   (design
     (source /home/ariel/Documents/Facultad/ClubdeRobotica/repositorios/reck/pcbs/encoder/encoder.sch)
-    (date "dom 18 sep 2016 14:30:50 ART")
-    (tool "Eeschema 4.1.0-alpha+201609011634+7108~49~ubuntu14.04.1-product")
+    (date "Fri 03 Mar 2017 10:00:19 PM ART")
+    (tool "Eeschema no-vcs-found-906ee77~58~ubuntu16.04.1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
         (title)
@@ -77,39 +77,39 @@
       (tstamp 57C0DB7C)))
   (libparts
     (libpart (lib conn) (part CONN_01X01)
-      (description "Connector, single row, 01x01")
+      (description "Connector, single row, 01x01, pin header")
       (footprints
-        (fp Pin_Header_Straight_1X01)
-        (fp Pin_Header_Angled_1X01)
-        (fp Socket_Strip_Straight_1X01)
-        (fp Socket_Strip_Angled_1X01))
+        (fp Pin_Header_Straight_1X*)
+        (fp Pin_Header_Angled_1X*)
+        (fp Socket_Strip_Straight_1X*)
+        (fp Socket_Strip_Angled_1X*))
       (fields
-        (field (name Reference) P)
+        (field (name Reference) J)
         (field (name Value) CONN_01X01))
       (pins
         (pin (num 1) (name P1) (type passive))))
     (libpart (lib conn) (part CONN_01X02)
-      (description "Connector, single row, 01x02")
+      (description "Connector, single row, 01x02, pin header")
       (footprints
-        (fp Pin_Header_Straight_1X02)
-        (fp Pin_Header_Angled_1X02)
-        (fp Socket_Strip_Straight_1X02)
-        (fp Socket_Strip_Angled_1X02))
+        (fp Pin_Header_Straight_1X*)
+        (fp Pin_Header_Angled_1X*)
+        (fp Socket_Strip_Straight_1X*)
+        (fp Socket_Strip_Angled_1X*))
       (fields
-        (field (name Reference) P)
+        (field (name Reference) J)
         (field (name Value) CONN_01X02))
       (pins
         (pin (num 1) (name P1) (type passive))
         (pin (num 2) (name P2) (type passive))))
     (libpart (lib conn) (part CONN_01X04)
-      (description "Connector, single row, 01x04")
+      (description "Connector, single row, 01x04, pin header")
       (footprints
-        (fp Pin_Header_Straight_1X04)
-        (fp Pin_Header_Angled_1X04)
-        (fp Socket_Strip_Straight_1X04)
-        (fp Socket_Strip_Angled_1X04))
+        (fp Pin_Header_Straight_1X*)
+        (fp Pin_Header_Angled_1X*)
+        (fp Socket_Strip_Straight_1X*)
+        (fp Socket_Strip_Angled_1X*))
       (fields
-        (field (name Reference) P)
+        (field (name Reference) J)
         (field (name Value) CONN_01X04))
       (pins
         (pin (num 1) (name P1) (type passive))
@@ -120,7 +120,7 @@
       (description Resistor)
       (footprints
         (fp R_*)
-        (fp Resistor_*))
+        (fp R_*))
       (fields
         (field (name Reference) R)
         (field (name Value) R))
