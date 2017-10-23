@@ -43,10 +43,33 @@ module engranaje(){
   translate([-20,-1,0])cube([2,2,5]);
 }
 
+ //   Tapa cerrada
+difference(){
+    translate([0,0,-60])cylinder(h=espesorEngranaje,d=diamSusp+10,$fn=50);
+    
+    union(){        
+        translate([0,(diamSusp+diamTubo)/4,-65])cylinder(h=10,d=3.4,$fn=50);
+        translate([0,-(diamSusp+diamTubo)/4,-65])cylinder(h=10,d=3.4,$fn=50);  
+    }
+}
+
+//   Tapa abierta
+difference(){
+    translate([0,0,-90])cylinder(h=espesorEngranaje,d=diamSusp+10,$fn=50);
+    
+    union(){
+        translate([0,0,-90])cylinder(h=5,d=diamTubo,$fn=50);
+        translate([0,(diamSusp+diamTubo)/4,-95])cylinder(h=10,d=3.4,$fn=50);
+        translate([0,-(diamSusp+diamTubo)/4,-95])cylinder(h=10,d=3.4,$fn=50);  
+    }
+}
+
 module tapaCerrada() {
+    
 }
 
 module tapaAbierta() {
+    
 }
 
 adaptador();
