@@ -36,7 +36,10 @@ module engranaje(){
     translate([0,0,11.5])rotate([0,90,0])cylinder(h=diamSusp+15,d=3.4,$fn=40,center=true);
 
     translate([0,(diamSusp+diamTubo)/4,0])cylinder(h=40,d=3.4,$fn=50);
+    translate([(diamSusp+diamTubo)/4,0,0])rotate([0,0,0])cylinder(h=40,d=3.4,$fn=50);
     translate([0,-(diamSusp+diamTubo)/4,0])cylinder(h=40,d=3.4,$fn=50);
+    translate([-(diamSusp+diamTubo)/4,0,0])rotate([0,0,0])cylinder(h=40,d=3.4,$fn=50);
+    
   }
 
   translate([18,-1,0])cube([2,2,5]);
@@ -44,14 +47,33 @@ module engranaje(){
 }
 
 module tapaCerrada() {
+    difference(){
+        union(){
+            cylinder(h=10,d=diamSusp,$fn=50);
+            translate([0,0,-10])cylinder(h=10,d=diamSusp+10);
+        }
+        translate([0,0,-5])cylinder(h=15,d=diamTubo+0.3,$fn=50);
+        translate([0,(diamSusp+diamTubo)/4,-20])rotate([0,0,90])cylinder(h=40,d=3.4,$fn=50);
+        translate([0,-(diamSusp+diamTubo)/4,-20])rotate([0,0,90])cylinder(h=40,d=3.4,$fn=50);
+    }
 }
 
-module tapaAbierta() {
+module tapaAbierta() { 
+    difference(){
+        union(){
+            cylinder(h=10,d=diamSusp,$fn=50);
+            translate([0,0,-10])cylinder(h=10,d=diamSusp+10);
+        }
+        translate([0,0,-20])cylinder(h=35,d=diamTubo+0.3,$fn=50);
+        translate([0,(diamSusp+diamTubo)/4,-20])rotate([0,0,90])cylinder(h=40,d=3.4,$fn=50);
+        translate([0,-(diamSusp+diamTubo)/4,-20])rotate([0,0,90])cylinder(h=40,d=3.4,$fn=50);
+    }
 }
 
 adaptador();
-  
-translate([0,0,-15])rotate([0,180,0]) engranaje();
+translate([0,0,-5])rotate([0,180,0]) engranaje();
+translate([0,0,35])rotate([0,180,0])tapaCerrada();
+translate([0,0,-45])rotate([0,0,90])tapaAbierta();
 /*
 translate([0,120,0])
 rotate([90,0,0])
