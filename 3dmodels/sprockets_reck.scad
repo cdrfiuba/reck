@@ -49,8 +49,8 @@ module engranaje(){
 module tapaCerrada() {
     difference(){
         union(){
-            cylinder(h=10,d=diamSusp,$fn=50);
-            translate([0,0,-10])cylinder(h=10,d=diamSusp+10);
+            cylinder(h=6,d=diamSusp,$fn=50);
+            translate([0,0,-6])cylinder(h=6,d=diamSusp+10);
         }
         translate([0,0,-5])cylinder(h=15,d=diamTubo+0.3,$fn=50);
         translate([0,(diamSusp+diamTubo)/4,-20])rotate([0,0,90])cylinder(h=40,d=3.4,$fn=50);
@@ -61,8 +61,8 @@ module tapaCerrada() {
 module tapaAbierta() { 
     difference(){
         union(){
-            cylinder(h=10,d=diamSusp,$fn=50);
-            translate([0,0,-10])cylinder(h=10,d=diamSusp+10);
+            cylinder(h=6,d=diamSusp,$fn=50);
+            translate([0,0,-6])cylinder(h=6,d=diamSusp+10);
         }
         translate([0,0,-20])cylinder(h=35,d=diamTubo+0.3,$fn=50);
         translate([0,(diamSusp+diamTubo)/4,-20])rotate([0,0,90])cylinder(h=40,d=3.4,$fn=50);
@@ -70,18 +70,26 @@ module tapaAbierta() {
     }
 }
 
-adaptador();
-translate([0,0,-5])rotate([0,180,0]) engranaje();
-translate([0,0,35])rotate([0,180,0])tapaCerrada();
-translate([0,0,-45])rotate([0,0,90])tapaAbierta();
-/*
-translate([0,120,0])
-rotate([90,0,0])
-sprocket(100, 10, 15/16,1.5,1);
 
-//translate([160,0,0])
-//sprocket(100, 8, 15/16,1.5,1);
+//adelante
+translate([300,-100,0]) rotate([90,0,0]) engranaje();
+translate([300,-135,0]) rotate([-90,0,0]) tapaCerrada();
 
-translate([600,0,0])
-rotate([-90,0,0])sprocket(100, 10, 15/16,1.5,1);
-*/
+translate([300,100,0]) rotate([90,0,0]) engranaje();
+translate([300,66,0]) rotate([-90,0,0]) tapaAbierta();
+
+//atras
+translate([-300,-135,0]) rotate([-90,0,0]) tapaCerrada();
+translate([-300,-100,0]) rotate([90,0,0]) engranaje();
+translate([-300,-95,0]) rotate([-90,0,0]) adaptador();
+translate([-300,-65,0]) rotate([90,0,0]) tapaAbierta();
+
+translate([-300,100,0]) rotate([90,0,0]) engranaje();
+
+//arriba
+translate([0,-100,200]) rotate([-90,0,0]) engranaje();
+translate([0,-65,200]) rotate([90,0,0]) tapaAbierta();
+
+translate([0,100,200]) rotate([90,0,0]) engranaje();
+translate([0,65,200]) rotate([-90,0,0]) tapaAbierta();
+
