@@ -32,7 +32,7 @@
 // use <sprockets.scad>
 $fn = 180;
 
-sprocket(25, 9, 5/16, 0, 0);
+sprocket(100, 9, 5/16, 0, 0);
 
 // Adjust these if it's too tight/loose on your printer,
 // These seem to be OK on my Replicator 1
@@ -190,7 +190,7 @@ function get_pitch(size) =
 	size == 530 ? 5/8 :
 	size == 630 ? 3/4 :
   // CDR
-  size == 100 ? 2 :
+  size == 100 ? 1.96 :
 	// unknown
 	0;
 
@@ -215,7 +215,7 @@ function get_roller_diameter(size) =
 	size == 530 ? .400 :
 	size == 630 ? 15/32 :
   // CDR
-  size == 100 ? 2-0.311 :
+  size == 100 ? 1.76 :
 	// unknown
 	0;
 
@@ -242,7 +242,7 @@ function get_thickness(size) =
 	size == 530 ? .343 :
 	size == 630 ? .343 :
   // CDR
-  size == 100 ? .284 :
+  size == 100 ? 0.168 :
 	// unknown
 	0;
 
